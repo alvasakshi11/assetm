@@ -197,6 +197,7 @@ class _FixedAssetsRegisterFormState extends State<FixedAssetsRegisterForm> {
   final _typeController = TextEditingController();
   final _purchaseDateController = TextEditingController();
   final _modelNumberController = TextEditingController();
+  final _purchaseAmountController = TextEditingController();
 
   // Define variable to hold selected dropdown values
   //----------------------------------always intialize the variables before using-----------------------
@@ -218,7 +219,9 @@ class _FixedAssetsRegisterFormState extends State<FixedAssetsRegisterForm> {
         'Product Name: ${_productNameController.text}\n'
         'Type: ${_typeController.text}\n'
         'Purchase Date: ${_purchaseDateController.text}\n'
-        'Model Number: ${_modelNumberController.text}';
+        'Model Number: ${_modelNumberController.text}\n'
+        'Product Amount: ${_purchaseAmountController}';
+
 
     setState(() {
       // _qrCodeData = '${_selectedCompanyName},${_selectedCategory},${_selectedYear}';
@@ -260,6 +263,7 @@ class _FixedAssetsRegisterFormState extends State<FixedAssetsRegisterForm> {
     _typeController.dispose();
     _purchaseDateController.dispose();
     _modelNumberController.dispose();
+    _purchaseAmountController.dispose();
     super.dispose();
   }
 
@@ -379,6 +383,19 @@ class _FixedAssetsRegisterFormState extends State<FixedAssetsRegisterForm> {
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter valid date';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                controller: _modelNumberController,
+                decoration: const InputDecoration(
+                  hintText: 'Enter the Amount',
+                  labelText: 'Purchase Amount',
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter Amount';
                   }
                   return null;
                 },
