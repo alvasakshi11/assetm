@@ -387,8 +387,9 @@ class _FixedAssetsRegisterFormState extends State<FixedAssetsRegisterForm> {
                   return null;
                 },
               ),
+              const SizedBox(height: 16.0),
               TextFormField(
-                controller: _modelNumberController,
+                controller: _purchaseAmountController,
                 decoration: const InputDecoration(
                   hintText: 'Enter the Amount',
                   labelText: 'Purchase Amount',
@@ -436,7 +437,7 @@ class _FixedAssetsRegisterFormState extends State<FixedAssetsRegisterForm> {
                           _qrCodeData =
                               '${DateTime.now().millisecondsSinceEpoch},${_selectedCompanyName},${_selectedCategory},${_selectedYear},'
                               '${_productNameController.text},${_typeController.text}'
-                              ',${_purchaseDateController.text},${_modelNumberController.text}';
+                              ',${_purchaseDateController.text},${_modelNumberController.text},${_purchaseAmountController}';
                         });
                       },
                     )),

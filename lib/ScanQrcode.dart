@@ -72,7 +72,7 @@ class QrcodescannerState extends State<Qrcodescanner> {
                     productname: data[4],
                     type: data[5],
                     purchasedate: data[6],
-                    modelnumber: data[7]),
+                    modelnumber: data[7], purchaseamount:data[8],),
               ),
             );
           }

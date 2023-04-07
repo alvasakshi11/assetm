@@ -270,9 +270,10 @@ class FixedAssetsTrackerScreen extends StatefulWidget {
   final String type;
   final String purchasedate;
   final String modelnumber;
+  final String purchaseamount;
   FixedAssetsTrackerScreen({required this.fixedassetno,required this.company, required this.category,
     required this.year, required this.productname, required this.type,
-    required this.purchasedate, required this.modelnumber});
+    required this.purchasedate, required this.modelnumber,required this.purchaseamount});
 
   @override
   FixedAssetsTrackerScreenState createState() =>
@@ -290,6 +291,7 @@ class FixedAssetsTrackerScreenState extends State<FixedAssetsTrackerScreen> {
   final _typeController = TextEditingController();
   final _purchaseDateController = TextEditingController();
   final _modelNumberController = TextEditingController();
+  final _purchaseAmountController = TextEditingController();
 
 
   @override
@@ -303,6 +305,7 @@ class FixedAssetsTrackerScreenState extends State<FixedAssetsTrackerScreen> {
     _typeController.text = widget.type;
     _purchaseDateController.text = widget.purchasedate;
     _modelNumberController.text = widget.modelnumber;
+    _purchaseAmountController.text =widget.purchaseamount;
   }
 
 
@@ -464,6 +467,20 @@ class FixedAssetsTrackerScreenState extends State<FixedAssetsTrackerScreen> {
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter valid date';
+                        }
+                        return null;
+                      },
+                    ),
+                     const SizedBox(height: 16.0),
+                    TextFormField(
+                      controller: _purchaseAmountController,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter Purchase Amount',
+                        labelText: 'Purchase Amount',
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter Amount';
                         }
                         return null;
                       },

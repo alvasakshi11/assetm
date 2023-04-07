@@ -83,7 +83,7 @@ class FixedAssetsDashboardScreen extends StatelessWidget {
                                 productname: '',
                                 type: '',
                                 purchasedate: '',
-                                modelnumber: '')),
+                                modelnumber: '', purchaseamount: '',)),
                       );
                     },
                     child: Card(
